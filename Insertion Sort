@@ -1,0 +1,48 @@
+//In progress
+#include <stdio.h>
+#include <stdlib.h>
+void swap(int a,int b){
+int temp=a;
+a=b;
+b=temp;
+};
+
+void printArray(int A[],int n){
+int i;
+for(i=0;i<n;i++){
+printf("%d->",A[i]);
+}
+printf("\n");
+}
+
+void insertionS0rt(int A[],int n){
+int temp;
+int i=1;//marker
+int key;
+int j;
+printArray(A,7);
+for(i=1;i<n;i++){
+key=A[i];
+j=i-1;
+while(0<=j&&A[j]>key){
+A[j+1]=A[j];
+j=j-1;
+printArray(A,7);
+}
+A[j+1]=key;
+}
+
+
+
+
+
+
+}
+
+
+int main (void){
+int A[7]={1,17,11,89,23,64,14};
+int i=sizeof(A)/sizeof(int);
+insertionS0rt(A,i);
+return 0;
+}
