@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct node{
+int data;
+struct node *next;
+}node;
+
+void travel(node *root){
+	if(root==NULL){
+  printf("Linked list is empty");
+	}
+	else{
+		printf("");
+while(root!=NULL){
+printf("[%d]->",root->data);
+root=root->next;
+}
+printf("NULL");
+printf("\nThe traveling of the linked list is done");
+}
+}
+
+void insertendNew(node *root,int newinfo){
+if(root==NULL){
+root=(node*) malloc(sizeof(node));
+root->next=NULL;
+root->data=newinfo;
+}
+else{
+if(root->next==NULL){
+	root->next=(node*) malloc(sizeof(node));
+	root->next->data=newinfo;
+	root->next->next=NULL;
+}
+else{
+while(root->next!=NULL){
+root=root->next;
+}
+root->next=(node*)malloc(sizeof(node));
+	root->next->data=newinfo;
+	root->next->next=NULL;}
+}}
+
+int main (void){
+node *root=(node*)malloc(sizeof(node));
+root->next=NULL;
+root->data=17;
+insertendNew(root,18);
+insertendNew(root,29);
+insertendNew(root,31);
+insertendNew(root,13);
+insertendNew(root,1998);
+insertendNew(root,85);
+insertendNew(root,1);
+insertendNew(root,7);
+insertendNew(root,95);
+travel(root);
+return 0;
+}
